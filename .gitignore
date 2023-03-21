@@ -1,0 +1,29 @@
+# GameMaker Studio 2 Project
+*.yy
+*.yyp
+*.yyc
+*.yydebug
+*.yypbak
+*.yyu
+
+# GameMaker Studio 2 Temp files
+*.tmp
+*.backup
+*.dmp
+*.pdb
+
+# GameMaker Studio 2 Crash logs
+*.mdmp
+*.mmp
+
+# GameMaker Studio 2 Other
+*.yyproj.user
+*.rpo
+*.rpi
+*.rtp
+*.rbuild
+*.yydeps
+*.yydeps_server
+*.yydeps_bu
+*.local
+*.gmprof
