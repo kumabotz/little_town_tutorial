@@ -1,17 +1,18 @@
 /// @description My first code
 
 // Variables
-walkSpeed = 16;
-vx = 0;
-vy = 0;
+walk_speed = 16;
+v_x = 0;
+v_y = 0;
 dir = 3;
-moveRight = 0;
-moveLeft = 0;
-moveUp = 0;
-moveDown = 0;
-nearbyNPC = noone;
-lookRange = 30;
-hasGreeted = false;
+move_right = 0;
+move_left = 0;
+move_up = 0;
+move_down = 0;
+nearby_NPC = noone;
+look_range = 30;
+has_greeted = false;
+npc_prompt = noone;
 
 // Create listener and set orientation
 audio_listener_set_position(0, x, y, 0);
