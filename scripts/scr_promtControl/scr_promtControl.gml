@@ -8,3 +8,21 @@ function scr_show_prompt(_object, _x, _y){
         }
     }
 }
+
+function scr_dismiss_prompt(_which_prompt, _to_reset) {
+    if (_which_prompt != undefined && instance_exists(_which_prompt)) {
+        // Tell prompt object to fade out
+        with (_which_prompt) {
+            fade_me = "fadeOut";
+        }
+        // Reset appropriate prompt variable
+        if (instance_exists(obj_player)) {
+            with (obj_player) {
+                switch _to_reset {
+                    // Reset npc prompt
+                    case 0: npc_prompt = noone; break;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
 /// @description Game variables
 
 // Game variables
-global.playerControl = true;
+global.player_control = true;

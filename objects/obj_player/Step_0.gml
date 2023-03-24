@@ -1,7 +1,7 @@
 /// @description Player movement
 
 // Check keys for movement
-if (global.playerControl) {
+if (global.player_control) {
 	move_right = keyboard_check(vk_right);
 	move_left = keyboard_check(vk_left);
 	move_up = keyboard_check(vk_up);
@@ -79,6 +79,10 @@ if (nearby_NPC) {
 }
 else {
     has_greeted = false;
+
+    // Get rid of prompt
+    scr_dismiss_prompt(npc_prompt, 0);
+
     //show_debug_message("obj_player hasn't found anything");
 }
 
