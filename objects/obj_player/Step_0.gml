@@ -74,7 +74,6 @@ if (nearby_NPC) {
     if (npc_prompt == noone || npc_prompt == undefined) {
         npc_prompt = scr_show_prompt(nearby_NPC, nearby_NPC.x, nearby_NPC.y - 450);
     }
-
     //show_debug_message("obj_player has found an NPC!");
 }
 else {
@@ -82,8 +81,21 @@ else {
 
     // Get rid of prompt
     scr_dismiss_prompt(npc_prompt, 0);
-
     //show_debug_message("obj_player hasn't found anything");
+}
+
+// Check for collision with Items
+nearby_item = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_item, false, true);
+if (nearby_item) {
+    // Pop up prompt
+    if (item_prompt == noone || item_prompt == undefined) {
+        //show_debug_message("obj_player has found an item!");
+        item_prompt = scr_show_prompt(nearby_item, nearby_item.x, nearby_item.y - 300);
+    }
+}
+else {
+    // Get rid of prompt
+    scr_dismiss_prompt(item_prompt, 1);
 }
 
 // Depth sorting

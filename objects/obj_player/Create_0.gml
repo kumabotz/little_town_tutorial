@@ -13,6 +13,12 @@ nearby_NPC = noone;
 look_range = 30;
 has_greeted = false;
 npc_prompt = noone;
+has_item = noone;
+has_item_x = x;
+has_item_y = y;
+nearby_item = noone;
+item_prompt = noone;
+carry_limit = 0;
 
 // Create listener and set orientation
 audio_listener_set_position(0, x, y, 0);

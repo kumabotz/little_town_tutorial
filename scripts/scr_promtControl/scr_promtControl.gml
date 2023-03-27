@@ -21,6 +21,8 @@ function scr_dismiss_prompt(_which_prompt, _to_reset) {
                 switch _to_reset {
                     // Reset npc prompt
                     case 0: npc_prompt = noone; break;
+                    // Reset item prompt
+                    case 1: item_prompt = noone; break;
                 }
             }
         }

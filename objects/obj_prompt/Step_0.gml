@@ -1,5 +1,8 @@
 /// @description Effeccts and animation
 
+// Bob up and down
+y += shift;
+
 // Fade effects
 switch fade_me {
     case "fadeIn": {
