@@ -19,6 +19,7 @@ has_item_y = y;
 nearby_item = noone;
 item_prompt = noone;
 carry_limit = 0;
+my_state = player_state.idle;
 
 // Create listener and set orientation
 audio_listener_set_position(0, x, y, 0);

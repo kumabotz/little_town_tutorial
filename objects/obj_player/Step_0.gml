@@ -2,16 +2,16 @@
 
 // Check keys for movement
 if (global.player_control) {
-	move_right = keyboard_check(vk_right);
-	move_left = keyboard_check(vk_left);
-	move_up = keyboard_check(vk_up);
-	move_down = keyboard_check(vk_down);
+    move_right = keyboard_check(vk_right);
+    move_left = keyboard_check(vk_left);
+    move_up = keyboard_check(vk_up);
+    move_down = keyboard_check(vk_down);
 }
 else {
-	move_right = 0;
-	move_left = 0;
-	move_up = 0;
-	move_down = 0;
+    move_right = 0;
+    move_left = 0;
+    move_up = 0;
+    move_down = 0;
 }
 
 // Calculate movement
@@ -20,46 +20,38 @@ v_y = (move_down - move_up) * walk_speed;
 
 // If idle
 if (v_x == 0 && v_y == 0) {
-	// Change idle Sprite based on direction
-	switch dir {
-		case 0: sprite_index = spr_player_idle_right; break;
-		case 1: sprite_index = spr_player_idle_up; break;
-		case 2: sprite_index = spr_player_idle_left; break;
-		case 3: sprite_index = spr_player_idle_down; break;
-	}
+    my_state = player_state.idle;
 }
 
 // If moving
 if (v_x != 0 || v_y != 0) {
-	if !collision_point(x + v_x, y, obj_par_environment, true, true) {
-		x += v_x;	
-	}
-	
-	if !collision_point(x, y + v_y, obj_par_environment, true, true) {
-		y += v_y;
-	}
-	
-	
-	// Change walking Sprite based on direction
-	if (v_x > 0) {
-		sprite_index = spr_player_walk_right;
-		dir = 0;
-	}
-	if (v_x < 0) {
-		sprite_index = spr_player_walk_left;
-		dir = 2;
-	}
-	if (v_y > 0) {
-		sprite_index = spr_player_walk_down;
-		dir = 3;
-	}
-	if (v_y < 0) {
-		sprite_index = spr_player_walk_up;
-		dir = 1;
-	}
-	
-	// Move audio listener with me
-	audio_listener_set_position(0, x, y, 0);
+    if !collision_point(x + v_x, y, obj_par_environment, true, true) {
+        x += v_x;	
+    }
+    
+    if !collision_point(x, y + v_y, obj_par_environment, true, true) {
+        y += v_y;
+    }
+    
+    // Change direction based on movement
+    if (v_x > 0) {
+        dir = 0;
+    }
+    if (v_x < 0) {
+        dir = 2;
+    }
+    if (v_y > 0) {
+        dir = 3;
+    }
+    if (v_y < 0) {
+        dir = 1;
+    }
+    
+    // Set state
+    my_state = player_state.walking;
+    
+    // Move audio listener with me
+    audio_listener_set_position(0, x, y, 0);
 }
 
 // Check for collision with NPCs
