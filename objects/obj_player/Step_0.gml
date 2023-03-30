@@ -26,13 +26,13 @@ if (v_x == 0 && v_y == 0) {
 // If moving
 if (v_x != 0 || v_y != 0) {
     if !collision_point(x + v_x, y, obj_par_environment, true, true) {
-        x += v_x;	
+        x += v_x;
     }
-    
+
     if !collision_point(x, y + v_y, obj_par_environment, true, true) {
         y += v_y;
     }
-    
+
     // Change direction based on movement
     if (v_x > 0) {
         dir = 0;
@@ -46,10 +46,10 @@ if (v_x != 0 || v_y != 0) {
     if (v_y < 0) {
         dir = 1;
     }
-    
+
     // Set state
     my_state = player_state.walking;
-    
+
     // Move audio listener with me
     audio_listener_set_position(0, x, y, 0);
 }

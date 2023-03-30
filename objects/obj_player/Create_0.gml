@@ -24,3 +24,21 @@ my_state = player_state.idle;
 // Create listener and set orientation
 audio_listener_set_position(0, x, y, 0);
 audio_listener_set_orientation(0, 0, 1, 0, 0, 0, 1);
+
+// Player sprite array [my_state][dir]
+// 0 => right
+// 1 => up
+// 2 => left
+// 3 => down
+
+// Idle
+player_spr[player_state.idle][0] = spr_player_idle_right;
+player_spr[player_state.idle][1] = spr_player_idle_up;
+player_spr[player_state.idle][2] = spr_player_idle_left;
+player_spr[player_state.idle][3] = spr_player_idle_down;
+
+// Walking
+player_spr[player_state.walking][0] = spr_player_walk_right;
+player_spr[player_state.walking][1] = spr_player_walk_up;
+player_spr[player_state.walking][2] = spr_player_walk_left;
+player_spr[player_state.walking][3] = spr_player_walk_down;
