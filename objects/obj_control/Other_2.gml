@@ -19,3 +19,11 @@ enum player_state {
     carry_idle,
     putting_down
 }
+
+// Item States
+enum item_state {
+    idle,
+    taken,
+    used,
+    putting_back
+}

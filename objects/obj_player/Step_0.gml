@@ -92,3 +92,6 @@ else {
 
 // Depth sorting
 depth = -y;
+
+// Auto-choose sprite based on state and direction
+sprite_index = player_spr[my_state][dir];
