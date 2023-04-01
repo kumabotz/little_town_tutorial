@@ -42,3 +42,27 @@ player_spr[player_state.walking][0] = spr_player_walk_right;
 player_spr[player_state.walking][1] = spr_player_walk_up;
 player_spr[player_state.walking][2] = spr_player_walk_left;
 player_spr[player_state.walking][3] = spr_player_walk_down;
+
+// Picking up
+player_spr[player_state.picking_up][0] = spr_player_pickUp_right;
+player_spr[player_state.picking_up][1] = spr_player_pickUp_up;
+player_spr[player_state.picking_up][2] = spr_player_pickUp_left;
+player_spr[player_state.picking_up][3] = spr_player_pickUp_down;
+
+// Carrying
+player_spr[player_state.carrying][0] = spr_player_carry_right;
+player_spr[player_state.carrying][1] = spr_player_carry_up;
+player_spr[player_state.carrying][2] = spr_player_carry_left;
+player_spr[player_state.carrying][3] = spr_player_carry_down;
+
+// Idle while carrying
+player_spr[player_state.carry_idle][0] = spr_player_carryIdle_right;
+player_spr[player_state.carry_idle][1] = spr_player_carryIdle_up;
+player_spr[player_state.carry_idle][2] = spr_player_carryIdle_left;
+player_spr[player_state.carry_idle][3] = spr_player_carryIdle_down;
+
+// Putting down
+player_spr[player_state.putting_down][0] = spr_player_putDown_right;
+player_spr[player_state.putting_down][1] = spr_player_putDown_up;
+player_spr[player_state.putting_down][2] = spr_player_putDown_left;
+player_spr[player_state.putting_down][3] = spr_player_putDown_down;
