@@ -87,8 +87,8 @@ if (v_x != 0 || v_y != 0)
 }
 
 // Check for collision with NPCs
-nearby_NPC = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_npc, false, true);
-if (nearby_NPC)
+nearby_npc = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_npc, false, true);
+if (nearby_npc)
 {
     // Play greeting sound
     if (!has_greeted)
@@ -99,7 +99,7 @@ if (nearby_NPC)
     // Pop up prompt
     if (npc_prompt == noone || npc_prompt == undefined)
     {
-        npc_prompt = scr_show_prompt(nearby_NPC, nearby_NPC.x, nearby_NPC.y - 450);
+        npc_prompt = scr_show_prompt(nearby_npc, nearby_npc.x, nearby_npc.y - 450);
     }
     //show_debug_message("obj_player has found an NPC!");
 }
@@ -114,7 +114,7 @@ else
 
 // Check for collision with Items
 nearby_item = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_item, false, true);
-if (nearby_item && !nearby_NPC)
+if (nearby_item && !nearby_npc)
 {
     // Pop up prompt
     if (item_prompt == noone || item_prompt == undefined)
@@ -136,6 +136,19 @@ if (my_state == player_state.picking_up)
     if (image_index >= image_number - 1)
     {
         my_state = player_state.carrying;
+        global.player_control = true;
+    }
+}
+
+// If put down an item
+if (my_state == player_state.putting_down)
+{
+    // Reset weight
+    carry_limit = 0;
+    // Reset my state once animation finishes
+    if (image_index >= image_number - 1)
+    {
+        my_state = player_state.idle;
         global.player_control = true;
     }
 }
