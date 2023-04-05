@@ -20,6 +20,10 @@ nearby_item = noone;
 item_prompt = noone;
 carry_limit = 0;
 my_state = player_state.idle;
+run_speed = 0;
+run_max = 12;
+running = false;
+start_dust = 0;
 
 // Create listener and set orientation
 audio_listener_set_position(0, x, y, 0);

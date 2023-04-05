@@ -16,9 +16,37 @@ else
     move_down = 0;
 }
 
+// Run with Shift key
+running = keyboard_check(vk_shift);
+
+// Speed up if running
+if (running)
+{
+    // Ramp up
+    if (run_speed < run_max)
+    {
+        run_speed += 2;
+    }
+    // Start creating dust
+    if (start_dust == 0)
+    {
+        alarm[0] = 2;
+        start_dust = 1;
+    }
+}
+else
+{
+    // Slow donw if no longer running
+    if (run_speed > 0)
+    {
+        run_speed -= 1;
+    }
+    start_dust = 0;
+}
+
 // Calculate movement
-v_x = (move_right - move_left) * walk_speed;
-v_y = (move_down - move_up) * walk_speed;
+v_x = (move_right - move_left) * (walk_speed + run_speed) * (1 - carry_limit);
+v_y = (move_down - move_up) * (walk_speed + run_speed) * (1 - carry_limit);
 
 // If idle
 if (v_x == 0 && v_y == 0)
