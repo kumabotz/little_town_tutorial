@@ -27,3 +27,16 @@ enum item_state {
     used,
     putting_back
 }
+
+// Sequence States
+enum seq_state {
+    not_playing,
+    waiting,
+    playing,
+    finished
+}
+
+// Sequence variables
+sequence_state = seq_state.not_playing;
+cur_seq_layer = noone;
+cur_seq = noone;
