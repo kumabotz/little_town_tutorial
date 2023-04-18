@@ -1,6 +1,6 @@
 /// @description Textbox test
 
-var _text;
+var _text, _seq;
 
 // If player has control
 if (global.player_control)
@@ -11,11 +11,33 @@ if (global.player_control)
         // If player doesn't have an item
         if (has_item == noone || has_item == undefined)
         {
-            _text = nearby_npc.myText;
+            _text = nearby_npc.my_text;
             if (!instance_exists(obj_textbox))
             {
                 iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
-                iii.textToShow = _text;
+                iii.text_to_show = _text;
+            }
+        }
+        else if (instance_exists(has_item))
+        {
+            // If player has correct item
+            if (has_item.object_index == nearby_npc.my_item)
+            {
+                _text = nearby_npc.item_text_happy;
+                _seq = nearby_npc.sequence_happy;
+            }
+            else
+            {
+                // Incorrect item
+                _text = nearby_npc.item_text_sad;
+                _seq = nearby_npc.sequence_sad;
+            }
+            // Create textbox
+            if (!instance_exists(obj_textbox))
+            {
+                iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
+                iii.text_to_show = _text;
+                iii.sequence_to_show = _seq;
             }
         }
     }

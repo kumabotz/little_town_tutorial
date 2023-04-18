@@ -5,7 +5,7 @@ switch fade_me {
 	// Fade in
 	case fade_state.fading_in: {
 		if (image_alpha < 1) {
-			image_alpha += fadeSpeed;
+			image_alpha += fade_speed;
 		} 
 		else {
 			fade_me = fade_state.fade_in_done;
@@ -17,7 +17,7 @@ switch fade_me {
 	// Fade out
 	case fade_state.fading_out: {
 		if (image_alpha > 0) {
-			image_alpha -= fadeSpeed;
+			image_alpha -= fade_speed;
 		} 
 		else {
 			fade_me = fade_state.fade_out_done;

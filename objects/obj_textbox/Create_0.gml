@@ -1,12 +1,13 @@
 /// @description Variables and setup
 
 // Textbox variables
-textToShow = "Put whatever text you like in this dialog!";
-textWidth = 450;
-lineHeight = 28;
+text_to_show = "Put whatever text you like in this dialog!";
+text_width = 450;
+line_height = 28;
 fade_me = fade_state.fading_in;
-fadeSpeed = 0.1;
+fade_speed = 0.1;
 image_alpha = 0;
+sequence_to_show = noone;
 
 global.player_control = false;
 
