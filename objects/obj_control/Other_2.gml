@@ -3,7 +3,8 @@
 // Game variables
 global.player_control = true;
 
-enum fade_state {
+enum fade_state
+{
     fading_in,
     fade_in_done,
     fading_out,
@@ -11,7 +12,8 @@ enum fade_state {
 }
 
 // Player States
-enum player_state {
+enum player_state
+{
     idle,
     walking,
     picking_up,
@@ -21,7 +23,8 @@ enum player_state {
 }
 
 // Item States
-enum item_state {
+enum item_state
+{
     idle,
     taken,
     used,
@@ -29,7 +32,8 @@ enum item_state {
 }
 
 // Sequence States
-enum seq_state {
+enum seq_state
+{
     not_playing,
     waiting,
     playing,
@@ -40,3 +44,10 @@ enum seq_state {
 sequence_state = seq_state.not_playing;
 cur_seq_layer = noone;
 cur_seq = noone;
+
+// npc states
+enum npc_state
+{
+    normal,
+    done
+}

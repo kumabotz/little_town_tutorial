@@ -25,6 +25,8 @@ if (global.player_control)
             {
                 _text = nearby_npc.item_text_happy;
                 _seq = nearby_npc.sequence_happy;
+                // Check if we should remove item, mark npc
+                alarm[1] = 10;
             }
             else
             {
