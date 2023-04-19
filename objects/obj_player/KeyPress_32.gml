@@ -8,38 +8,52 @@ if (global.player_control)
     // If near an NPC
     if (nearby_npc)
     {
-        // If player doesn't have an item
-        if (has_item == noone || has_item == undefined)
+        // If npc is still available
+        if (nearby_npc.my_state == npc_state.normal)
         {
-            _text = nearby_npc.my_text;
-            if (!instance_exists(obj_textbox))
+            // If player doesn't have an item
+            if (has_item == noone || has_item == undefined)
             {
-                iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
-                iii.text_to_show = _text;
+                _text = nearby_npc.my_text;
+                if (!instance_exists(obj_textbox))
+                {
+                    iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
+                    iii.text_to_show = _text;
+                }
+            }
+            else if (instance_exists(has_item))
+            {
+                // If player has correct item
+                if (has_item.object_index == nearby_npc.my_item)
+                {
+                    _text = nearby_npc.item_text_happy;
+                    _seq = nearby_npc.sequence_happy;
+                    // Check if we should remove item, mark npc
+                    alarm[1] = 10;
+                }
+                else
+                {
+                    // Incorrect item
+                    _text = nearby_npc.item_text_sad;
+                    _seq = nearby_npc.sequence_sad;
+                }
+                // Create textbox
+                if (!instance_exists(obj_textbox))
+                {
+                    iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
+                    iii.text_to_show = _text;
+                    iii.sequence_to_show = _seq;
+                }
             }
         }
-        else if (instance_exists(has_item))
+
+        if (nearby_npc.my_state == npc_state.done)
         {
-            // If player has correct item
-            if (has_item.object_index == nearby_npc.my_item)
-            {
-                _text = nearby_npc.item_text_happy;
-                _seq = nearby_npc.sequence_happy;
-                // Check if we should remove item, mark npc
-                alarm[1] = 10;
-            }
-            else
-            {
-                // Incorrect item
-                _text = nearby_npc.item_text_sad;
-                _seq = nearby_npc.sequence_sad;
-            }
             // Create textbox
             if (!instance_exists(obj_textbox))
             {
                 iii = instance_create_depth(nearby_npc.x, nearby_npc.y - 400, -10000, obj_textbox);
-                iii.text_to_show = _text;
-                iii.sequence_to_show = _seq;
+                iii.text_to_show = nearby_npc.item_text_done;
             }
         }
     }
