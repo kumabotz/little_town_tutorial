@@ -2,6 +2,7 @@
 
 // Game variables
 global.player_control = true;
+global.game_over = false;
 
 enum fade_state
 {
