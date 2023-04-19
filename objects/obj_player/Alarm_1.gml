@@ -9,7 +9,7 @@ if (has_item != noone && instance_exists(has_item))
         instance_destroy();
     }
     // Reset my item variables
-    has_itemm = noone;
+    has_item = noone;
     carry_limit = 0;
 }
 
