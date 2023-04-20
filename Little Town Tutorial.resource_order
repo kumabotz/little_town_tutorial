@@ -85,6 +85,7 @@
     {"name":"seq_teacher_sad","order":3,"path":"sequences/seq_teacher_sad/seq_teacher_sad.yy",},
     {"name":"spr_baker_angry","order":2,"path":"sprites/spr_baker_angry/spr_baker_angry.yy",},
     {"name":"spr_fence01","order":1,"path":"sprites/spr_fence01/spr_fence01.yy",},
+    {"name":"scr_sequence_control","order":1,"path":"scripts/scr_sequence_control/scr_sequence_control.yy",},
     {"name":"snd_pop01","order":5,"path":"sounds/snd_pop01/snd_pop01.yy",},
     {"name":"obj_tree","order":6,"path":"objects/obj_tree/obj_tree.yy",},
     {"name":"obj_textbox","order":1,"path":"objects/obj_textbox/obj_textbox.yy",},
