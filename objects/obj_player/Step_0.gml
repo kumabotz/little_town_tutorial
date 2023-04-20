@@ -114,8 +114,8 @@ if (v_x != 0 || v_y != 0)
 // Set my listener if sequence is playing
 if (instance_exists(obj_control) && obj_control.sequence_state == seq_state.playing)
 {
-    var _cam_x = camera_get_view_x(view_camera[0]) + floor(camera_get_view_width(view_camera[0]) * 0.5);
-    var _cam_y = camera_get_view_y(view_camera[0]) + floor(camera_get_view_height(view_camera[0]) * 0.5);
+    var _cam_x = scr_get_cam_x();
+    var _cam_y = scr_get_cam_y();
     audio_listener_set_position(0, _cam_x, _cam_y, 0);
 }
 else
