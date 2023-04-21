@@ -70,6 +70,7 @@
     {"name":"spr_fountain_strip05","order":2,"path":"sprites/spr_fountain_strip05/spr_fountain_strip05.yy",},
     {"name":"spr_player_carryIdle_left","order":12,"path":"sprites/spr_player_carryIdle_left/spr_player_carryIdle_left.yy",},
     {"name":"spr_store01","order":5,"path":"sprites/spr_store01/spr_store01.yy",},
+    {"name":"scr_game_control","order":3,"path":"scripts/scr_game_control/scr_game_control.yy",},
     {"name":"scr_cam_control","order":2,"path":"scripts/scr_cam_control/scr_cam_control.yy",},
     {"name":"spr_baker_happy","order":3,"path":"sprites/spr_baker_happy/spr_baker_happy.yy",},
     {"name":"snd_townBGM","order":14,"path":"sounds/snd_townBGM/snd_townBGM.yy",},
