@@ -111,6 +111,7 @@
     {"name":"spr_player_carryIdle_up","order":14,"path":"sprites/spr_player_carryIdle_up/spr_player_carryIdle_up.yy",},
     {"name":"spr_seq_bgEffect02","order":6,"path":"sprites/spr_seq_bgEffect02/spr_seq_bgEffect02.yy",},
     {"name":"obj_control","order":4,"path":"objects/obj_control/obj_control.yy",},
+    {"name":"seq_main_title","order":7,"path":"sequences/seq_main_title/seq_main_title.yy",},
     {"name":"spr_item03","order":2,"path":"sprites/spr_item03/spr_item03.yy",},
     {"name":"spr_title_youDidIt","order":4,"path":"sprites/spr_title_youDidIt/spr_title_youDidIt.yy",},
     {"name":"snd_greeting01","order":2,"path":"sounds/snd_greeting01/snd_greeting01.yy",},
